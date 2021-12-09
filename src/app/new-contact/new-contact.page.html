@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Nuevo contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </ion-item> 
+</ion-content>
+
+<ion-tabs>
+  <ion-button (click)="goToListContact()">
+    <ion-icon name="return-down-back-outline"></ion-icon>
+  </ion-button>
+</ion-tabs>

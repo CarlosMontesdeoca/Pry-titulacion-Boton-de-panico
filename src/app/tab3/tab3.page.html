@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 3
+      Configuracion de usuario
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <form>
+    <fieldset>
+      <div class="mb-3">
+        <label for="inputNameUser" class="form-label">Nombre de Usuario</label>
+        <input type="text" id="inputNameUser" class="form-control" value={{user[0].name}}>
+      </div>
+      <div class="mb-3">
+        <label for="inputMesaje" class="form-label">Mensaje de ayuda</label>
+        <input type="text" id="inputMesaje" class="form-control" value={{user[0].message}}>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Editar</button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    </fieldset>
+  </form>
 </ion-content>

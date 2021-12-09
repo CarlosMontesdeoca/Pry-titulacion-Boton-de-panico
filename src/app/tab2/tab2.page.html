@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 2
+      Lista de contactos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">+593</span>
+    <input type="number" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="basic-addon1">
+  </div>
+  <ion-button (click)="goToNewContact()">
+    Agregar nuevo contacto
+  </ion-button>
+  <ion-list>
+    <ion-item *ngFor=" let contact of contacts ">
+      <ion-label> {{contact.name}} </ion-label>
+      <ion-label> {{contact.number}} </ion-label>
+      <ion-button (click)="editContact(contact)">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

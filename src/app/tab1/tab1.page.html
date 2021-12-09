@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+  <ion-toolbar  color="dark">
+      <ion-title>
+        Boton de panico
+      </ion-title> 
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="center">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="fondo">
+    <ion-button *ngFor="let alarma of alarmas" (click)="reproducir(alarma)" class="main_button" color="danger" shape="round">
+      <div class="sec_button">
+        {{ alarma.nombre }}
+      </div>
+    </ion-button>
+  </div>
+  
 </ion-content>
