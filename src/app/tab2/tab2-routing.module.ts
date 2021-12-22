@@ -6,6 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  //   children: [
+  //     {
+  //       path: 'new-contact',
+  //       loadChildren: () => import('../new-contact/new-contact.module').then(m => m.NewContactPageModule)
+  //     },
+  //     {
+  //       path: '',
+  //       redirectTo: '/tab2',
+  //       pathMatch: 'full'
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: '/tab2',
+  //   pathMatch: 'full'
   }
 ];
 

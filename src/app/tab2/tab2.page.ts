@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -6,70 +8,39 @@ import { NavController } from '@ionic/angular';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
-  contacts = [
-    {
-      name: "Mejor Amigo",
-      number: "+593978885465"
-    },
-    {
-      name: "Mamá",
-      number: "+593213455235"
-    },
-    {
-      name: "Papá",
-      number: "+593213455235"
-    },
-    {
-      name: "Mejor Amigo",
-      number: "+593978885465"
-    },
-    {
-      name: "Mamá",
-      number: "+593213455235"
-    },
-    {
-      name: "Papá",
-      number: "+593213455235"
-    },
-    {
-      name: "Mejor Amigo",
-      number: "+593978885465"
-    },
-    {
-      name: "Mamá",
-      number: "+593213455235"
-    },
-    {
-      name: "Papá",
-      number: "+593213455235"
-    },{
-      name: "Mejor Amigo",
-      number: "+593978885465"
-    },
-    {
-      name: "Mamá",
-      number: "+593213455235"
-    },
-    {
-      name: "Papá",
-      number: "+593213455235"
-    }
-  
-  ]
+  contactForm: FormGroup;
 
   constructor(
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private router: Router,
+    public formBuilder: FormBuilder,
+    private zone: NgZone,
+    // private contactCrudService: ContactCrudService 
   ) {
-    
+    this.contactForm = this.formBuilder.group({
+      name: [''],
+      phone: ['']
+    })
   }
 
-  editContact( contact ) {
-    console.log(contact)
-  }
-  
-  goToNewContact() {
-    this.navCtrl.navigateForward( '/new-contact' );
-  }
+  ngOnInit() { }
+
+  // onSubmit() {
+  //   if (!this.contactForm.valid) {
+  //     return false;
+  //   } else {
+  //     this.contactCrudService.createUser(this.contactForm.value)
+  //       .subscribe((response) => {
+  //         this.zone.run(() => {
+  //           this.contactForm.reset();
+  //           this.router.navigate(['/list']);
+  //         })
+  //       });
+  //   }
+  // }
 }
+
+
+//https://remotestack.io/ionic-angular-crud-app-with-node-express-and-mongodb/

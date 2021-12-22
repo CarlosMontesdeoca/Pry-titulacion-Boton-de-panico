@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true" class="center">
 
   <div class="fondo">
-    <ion-button *ngFor="let alarma of alarmas" (click)="reproducir(alarma)" class="main_button" color="danger" shape="round">
+    <ion-button *ngFor="let alarma of alarmas" (click)="getLocation()" class="main_button" color="danger" shape="round">
       <div class="sec_button">
         {{ alarma.nombre }}
       </div>
